@@ -7,7 +7,8 @@ class Project:
         self._id = id
 
     def __repr__(self) -> str:
-        return f"id: {self._id} \n name: {self._name}"
+        return f"id: {self._id} \nname: {self._name}"
 
 
 p: Project = Project("Kihito", 1)
+print(p)
