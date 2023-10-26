@@ -1,14 +1,26 @@
-class Project:
-    _name: str
-    _id: int
-
-    def __init__(self, name, id) -> None:
-        self._name = name
-        self._id = id
-
-    def __repr__(self) -> str:
-        return f"id: {self._id} \nname: {self._name}"
+from http.server import BaseHTTPRequestHandler
+from http.server import HTTPServer
 
 
-p: Project = Project("Kihito", 1)
-print(p)
+
+def run( server_class = HTTPServer, handler_class = BaseHTTPRequestHandler):
+    _port: int = 8000
+    server_address = ("", _port)
+    httpd = server_class(server_address, handler_class)
+    try:
+        httpd.serve_forever()
+    except:
+        httpd.server_close()
+
+class HttpGetHandler(BaseHTTPRequestHandler):
+    _httpCodes: int = 200
+    def do_GET(self):
+        self.send_response(self._httpCodes)
+        self.send_header("Content-type", "text/html")
+        self.end_headers()
+        self.wfile.write("<html><head><meta charset='utf-8'>".encode())
+        self.wfile.write("<title>Just HTTP-server.</title></head>".encode())
+        self.wfile.write("<body>A GET request was received</body></html>".encode())
+
+
+run(handler_class = HttpGetHandler)
