@@ -1,26 +1,42 @@
-from http.server import BaseHTTPRequestHandler
-from http.server import HTTPServer
+import math
+class Learn:
+    def sumThreeNumber(self, number: str):
+        sum: int = 0
+        for i in number:
+            sum += int(i)
+        print(sum)
+
+    # соотношения 1:1:4
+    def paperCranens(self, number: int):
+        correlationToOne: int =  int(number / 6)
+        print(correlationToOne, correlationToOne * 4, correlationToOne)
+
+    def luckyTiket(self, number: str):
+        long: int = int(len(number))
+        leftNumber: str = number[0: int(long/2)]
+        rightNumber: str = number[int(long/2): long]
+
+        leftNumberSum: int = 0
+        rightNumberSum: int = 0
+        i: int = 0
+
+        if(len(leftNumber) != len(rightNumber)):
+            print("no")
+
+        while i < int(long/2):
+            leftNumberSum += int(leftNumber[i])
+            rightNumberSum += int(rightNumber[i])
+            i += 1
+
+        if(leftNumberSum == rightNumberSum):
+            print("yes")
+        else:
+            print("no")
+
+    def splittingChocolateBar(self):
 
 
-
-def run( server_class = HTTPServer, handler_class = BaseHTTPRequestHandler):
-    _port: int = 8000
-    server_address = ("", _port)
-    httpd = server_class(server_address, handler_class)
-    try:
-        httpd.serve_forever()
-    except:
-        httpd.server_close()
-
-class HttpGetHandler(BaseHTTPRequestHandler):
-    _httpCodes: int = 200
-    def do_GET(self):
-        self.send_response(self._httpCodes)
-        self.send_header("Content-type", "text/html")
-        self.end_headers()
-        self.wfile.write("<html><head><meta charset='utf-8'>".encode())
-        self.wfile.write("<title>Just HTTP-server.</title></head>".encode())
-        self.wfile.write("<body>A GET request was received</body></html>".encode())
-
-
-run(handler_class = HttpGetHandler)
+learn: Learn = Learn()
+#learn.sumThreeNumber(number="123")
+#learn.paperCranens(number=24)
+#learn.luckyTiket("124123")
