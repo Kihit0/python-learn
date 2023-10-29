@@ -8,7 +8,7 @@ class Learn:
 
     # соотношения 1:1:4
     def paperCranens(self, number: int):
-        correlationToOne: int =  int(number / 6)
+        correlationToOne: int = int(number / 6)
         print(correlationToOne, correlationToOne * 4, correlationToOne)
 
     def luckyTiket(self, number: str):
@@ -20,7 +20,7 @@ class Learn:
         rightNumberSum: int = 0
         i: int = 0
 
-        if(len(leftNumber) != len(rightNumber)):
+        if len(leftNumber) != len(rightNumber):
             print("no")
 
         while i < int(long/2):
@@ -28,15 +28,25 @@ class Learn:
             rightNumberSum += int(rightNumber[i])
             i += 1
 
-        if(leftNumberSum == rightNumberSum):
+        if leftNumberSum == rightNumberSum:
             print("yes")
         else:
             print("no")
 
-    def splittingChocolateBar(self):
+    def splittingChocolateBar(self, a: int, b: int, c: int) -> None:
+        if(c > (a * b)):
+            print("no")
+        elif(c == 1 & ((a == 1) | (b == 1))):
+            print("yes")
+        elif (a != 1) & (b != 1) & (c != 1):
+            if (a % c == 0) | (c % a == 0) | (b % c == 0) | (c % b == 0):
+                print("yes")
+        else:
+            print("no")
 
 
 learn: Learn = Learn()
 #learn.sumThreeNumber(number="123")
 #learn.paperCranens(number=24)
 #learn.luckyTiket("124123")
+learn.splittingChocolateBar(a=4, b=5, c=22)
