@@ -6,12 +6,12 @@ class Learn:
             sum += int(i)
         print(sum)
 
-    # соотношения 1:1:4
-    def paperCranens(self, number: int):
+    # ratios 1:1:4
+    def paperCranes(self, number: int):
         correlationToOne: int = int(number / 6)
         print(correlationToOne, correlationToOne * 4, correlationToOne)
 
-    def luckyTiket(self, number: str):
+    def luckyTicket(self, number: str):
         long: int = int(len(number))
         leftNumber: str = number[0: int(long/2)]
         rightNumber: str = number[int(long/2): long]
@@ -47,6 +47,6 @@ class Learn:
 
 learn: Learn = Learn()
 #learn.sumThreeNumber(number="123")
-#learn.paperCranens(number=24)
-#learn.luckyTiket("124123")
+#learn.paperCranes(number=24)
+#learn.luckyTicket("124123")
 learn.splittingChocolateBar(a=4, b=5, c=22)
