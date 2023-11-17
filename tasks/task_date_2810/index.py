@@ -1,13 +1,13 @@
 import math
 class Learn2810:
-    def sumThreeNumber(self, number: str):
+    def sumThreeNumber(self, number: str) -> None:
         sum: int = 0
         for i in number:
             sum += int(i)
         print(sum)
 
     # ratios 1:1:4
-    def paperCranes(self, number: int):
+    def paperCranes(self, number: int) -> None:
         correlationToOne: int = int(number / 6)
         print(correlationToOne, correlationToOne * 4, correlationToOne)
 

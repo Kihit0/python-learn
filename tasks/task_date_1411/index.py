@@ -2,7 +2,7 @@ import math
 
 class Learn1411:
 
-    def count_money(self, coins: list[int]):
+    def count_money(self, coins: list[int]) -> None:
         count: int = sum(coins)
         if(count == len(coins)):
             print(f"0")
@@ -11,7 +11,7 @@ class Learn1411:
         else: 
             print(f"{count}")
 
-    def xy(self, s: int, p: int):
+    def xy(self, s: int, p: int) -> None:
         number: str = ""
 
         if(s > 1000 | p > 1000):
@@ -24,7 +24,7 @@ class Learn1411:
 
         print(f"{number}")     
 
-    def sqrtTwo(self, n: int):
+    def sqrtTwo(self, n: int) -> None:
         for i in range(n):
             if((2 ** i) <= n):
                 print(f"{2 ** i}")
