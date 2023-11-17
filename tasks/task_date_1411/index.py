@@ -17,10 +17,10 @@ class Learn1411:
         if(s > 1000 | p > 1000):
             print("Numbers exceed the limit")
 
-        for i in range(s + 1):
+        for i in range(int(s / 2) + 1):
             for j in range(s + 1):
                 if(((i * j == p) & (i + j == s)) & (i <= j)):
-                    number += str(i) + " " + str(j) + " "
+                    number += f"{str(i)} {str(j)}"
 
         print(f"{number}")     
 
