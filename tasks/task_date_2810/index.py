@@ -1,4 +1,6 @@
 import math
+
+
 class Learn2810:
     def sumThreeNumber(self, number: str) -> None:
         sum: int = 0
@@ -13,8 +15,8 @@ class Learn2810:
 
     def luckyTicket(self, number: str):
         long: int = int(len(number))
-        leftNumber: str = number[0: int(long/2)]
-        rightNumber: str = number[int(long/2): long]
+        leftNumber: str = number[0 : int(long / 2)]
+        rightNumber: str = number[int(long / 2) : long]
 
         leftNumberSum: int = 0
         rightNumberSum: int = 0
@@ -23,7 +25,7 @@ class Learn2810:
         if len(leftNumber) != len(rightNumber):
             print("no")
 
-        while i < int(long/2):
+        while i < int(long / 2):
             leftNumberSum += int(leftNumber[i])
             rightNumberSum += int(rightNumber[i])
             i += 1
@@ -34,9 +36,9 @@ class Learn2810:
             print("no")
 
     def splittingChocolateBar(self, a: int, b: int, c: int) -> None:
-        if(c > (a * b)):
+        if c > (a * b):
             print("no")
-        elif(c == 1 & ((a == 1) | (b == 1))):
+        elif c == 1 & ((a == 1) | (b == 1)):
             print("yes")
         elif (a != 1) & (b != 1) & (c != 1):
             if (a % c == 0) | (c % a == 0) | (b % c == 0) | (c % b == 0):
