@@ -18,11 +18,7 @@ class Learn2811:
         return arithmeticProgress
 
 
-# [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+lst: list[int] = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
 learn: Learn2811 = Learn2811()
-print(
-    learn.betweenTwoNumber(
-        [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7], -10, -4
-    )
-)
+print(learn.betweenTwoNumber(lst, -10, -4))
 print(learn.arithmeticProgression(2, 3, 4))
