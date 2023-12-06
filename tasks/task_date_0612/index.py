@@ -33,8 +33,16 @@ class Interface(logics.Logic):
 
                     st: set = set(map(lambda item: len(item) != 1, writePhone.split()))
 
-                    if len(writePhone.split()) != 4 or len(st) != 1 or list(st)[0] == False:
-                        while (len(writePhone.split()) != 4 or len(st) != 1 or list(st)[0] != False):
+                    if (
+                        len(writePhone.split()) != 4
+                        or len(st) != 1
+                        or list(st)[0] == False
+                    ):
+                        while (
+                            len(writePhone.split()) != 4
+                            or len(st) != 1
+                            or list(st)[0] != False
+                        ):
                             print("Вы ввели некорректные данные")
                             writePhone: str = input()
                     else:
@@ -67,6 +75,7 @@ class Interface(logics.Logic):
                     print("Неверная команда")
 
 
-path: str = "tasks/task_date_0612/phone.txt"
-workWithFile: Interface = Interface(path)
-workWithFile.interface()
+if __name__ == "__main__":
+    path: str = "tasks/task_date_0612/phone.txt"
+    workWithFile: Interface = Interface(path)
+    workWithFile.interface()
