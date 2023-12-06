@@ -67,6 +67,6 @@ class Interface(logics.Logic):
                     print("Неверная команда")
 
 
-path: str = "c:/IT/PythonProject/python-learn/tasks/task_date_0612/phone.txt"
+path: str = "tasks/task_date_0612/phone.txt"
 workWithFile: Interface = Interface(path)
 workWithFile.interface()
